@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <style>
+        /* CHANGED: Switched to vertical flexbox layout */
+        body {
+            background: linear-gradient(135deg, #83c5be, #064789);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .custom-navbar {
+            background-color: #83c5be !important;
+            border-bottom: 3px solid #006d77; 
+        }
+
+        .custom-navbar .navbar-brand {
+            color: #064789 !important;
+            font-weight: 700;
+        }
+
+        .custom-navbar .nav-link {
+            color: #fefae0 !important; 
+            transition: color 0.2s ease-in-out;
+        }
+
+        .custom-navbar .nav-link:hover, 
+        .custom-navbar .nav-link.active {
+            color: #064789 !important;
+        }
+
+        .custom-nordic-header {
+            background-color: #ebf2fa !important; 
+            color: #242322 !important;
+        }
+
+        .custom-nordic-header h1 {
+            color: #064789 !important; 
+        }
+
+        .custom-sidebar-accent {
+            border-top: 4px solid #064789 !important; 
+        }
+
+        code {
+            color: #064789 !important;
+            font-weight: 600;
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* CHANGED: Removed the huge margin-top so it sticks to the bottom naturally */
+        #footer-anchor-target {
+            background-color: #83c5be !important;
+            color: #064789 !important;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        /* Simple Semi-Transparent Card Container */
+        .register-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            color: white;
+            width: 100%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar stays at the top -->
+    <nav class="navbar navbar-expand-md navbar-dark custom-navbar shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+             <i class="bi bi-cake-fill me-2"></i>Nathan's Sugarland
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" 
+                 data-bs-toggle="collapse" 
+                 data-bs-target="#mainDepartmentNavbar" 
+                 aria-controls="mainDepartmentNavbar" 
+                 aria-expanded="false" 
+                 aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainDepartmentNavbar">
+                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                     <li class="nav-item"><a class="nav-link" href="About-us.html">About us</a></li>
+                     <li class="nav-item"><a class="nav-link" href="Menu.html">Menu</a></li>
+                 </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CHANGED: Main content container handles perfectly centering the card while pushing the footer down -->
+    <div class="container flex-grow-1 d-flex align-items-center justify-content-center my-4">
+        <div class="register-card">
+            <h2 class="text-center mb-4">Registration</h2>
+            <p class="subtitle text-center mb-4">
+                Register to order cakes, track your orders, and receive exclusive offers.
+            </p>
+            
+            <form action="#" method="POST" onsubmit="event.preventDefault();">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter Full Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Mobile Number</label>
+                        <input type="text" class="form-control" placeholder="Enter mobile number" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Username Handle</label>
+                    <div class="input-group">
+                        <span class="input-group-text">@</span>
+                        <input type="text" class="form-control" placeholder="persons.username" required>
+                        <span class="input-group-text">@gmail.com</span>
+                    </div>
+                </div>
+
+               <div class="col-12 mb-3">
+                    <label>Complete Address</label>
+                    <textarea class="form-control" rows="3" placeholder="Enter your complete address" required></textarea>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" placeholder="Create password" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Retype password" required>
+                    </div>
+                </div>
+
+                <div class="mb-4 form-check">
+                    <input class="form-check-input" type="checkbox" id="terms" checked required>
+                    <label class="form-check-label small text-white-50" for="terms">
+                        I agree to the digital Data Privacy Policy rules.
+                    </label>
+                </div>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="Login.html" class="text-warning">Already have an account? Login here.</a>
+                    </li>
+                </ul>
+
+                <button type="submit" class="btn btn-success w-100 py-2">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer stays anchored at the very bottom -->
+    <footer id="footer-anchor-target" class="w-100">
+        <h4>Nathan's Sugarland</h4>
+        <p style="width:60%; margin:0 auto; text-align:center;"><strong>
+            Making every celebration sweeter since 2025.
+        </strong></p>
+        <hr>
+        <p class="mb-0">
+            © 2026 Nathan's Sugarland. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
